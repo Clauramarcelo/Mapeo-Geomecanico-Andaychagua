@@ -1,0 +1,391 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#eef3f7;
+    font-family:Arial, Helvetica, sans-serif;
+    padding:9px;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+}
+
+h1{
+    text-align:center;
+    color:#003366;
+    margin-bottom:12px;
+}
+
+/* -------------------------------- */
+/* INPUTS */
+/* -------------------------------- */
+
+input,
+select,
+textarea{
+
+    width:100%;
+
+    padding:10px;
+
+    margin-top:6px;
+
+    margin-bottom:8px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:8px;
+
+    background:white;
+
+    font-size:12px;
+
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 5px rgba(37,99,235,.3);
+
+}
+
+/* -------------------------------- */
+/* SECCIONES */
+/* -------------------------------- */
+
+section{
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    border:1px solid #d9dee5;
+
+    box-shadow:0 2px 6px rgba(0,0,0,.08);
+
+}
+
+h2{
+
+    color:#003366;
+
+    margin-bottom:15px;
+
+}
+
+/* -------------------------------- */
+/* BOTONES */
+/* -------------------------------- */
+
+button{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-top:10px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:0.2s;
+
+}
+
+button:hover{
+
+    transform:translateY(-1px);
+
+}
+
+/* -------------------------------- */
+/* CONTADOR */
+/* -------------------------------- */
+
+#contador{
+
+    margin-top:15px;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    background:#dbeafe;
+
+    color:#1e3a8a;
+
+    text-align:center;
+
+    font-weight:bold;
+
+}
+
+/* -------------------------------- */
+/* FAMILIAS */
+/* -------------------------------- */
+
+#contenedorFamilias{
+
+    margin-top:10px;
+
+}
+
+.card-familia{
+
+    background:#fafcff;
+
+    border:1px solid #cbd5e1;
+
+    border-radius:12px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+}
+
+.card-familia h3{
+
+    text-align:center;
+
+    color:#003366;
+
+    margin-bottom:15px;
+
+}
+
+.card-familia h4{
+
+    margin-top:15px;
+
+    margin-bottom:10px;
+
+    color:#003366;
+
+}
+
+/* -------------------------------- */
+/* PESTAÑAS */
+/* -------------------------------- */
+
+.tabs{
+
+    display:flex;
+
+    gap:8px;
+
+    overflow-x:auto;
+
+    margin-bottom:20px;
+
+    padding-bottom:5px;
+
+    scrollbar-width:none;
+
+}
+
+.tabs::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.tabs button{
+
+    width:auto;
+
+    min-width:120px;
+
+    padding:12px;
+
+    margin:0;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#e5e7eb;
+
+    color:#003366;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    flex-shrink:0;
+
+}
+
+.tabs button.activo{
+
+    background:#2563eb !important;
+
+    color:#ffffff !important;
+
+}
+
+/* -------------------------------- */
+/* CONTENIDO DE PESTAÑAS */
+/* -------------------------------- */
+
+.tab-content{
+
+    display:none;
+
+}
+
+.tab-content.active{
+
+    display:block;
+
+}
+
+/* -------------------------------- */
+/* G1-G15 */
+/* -------------------------------- */
+
+.grid-celdas{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:10px;
+
+}
+
+/* -------------------------------- */
+/* ESPACIAMIENTOS */
+/* -------------------------------- */
+
+.grid-esp{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,minmax(80px,1fr));
+
+    gap:8px;
+
+}
+
+/* -------------------------------- */
+/* PERSISTENCIAS */
+/* -------------------------------- */
+
+.grid-pers{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,minmax(80px,1fr));
+
+    gap:8px;
+
+}
+
+/* -------------------------------- */
+/* MOVIL */
+/* -------------------------------- */
+
+@media(max-width:768px){
+
+    .grid-celdas{
+
+        grid-template-columns:
+        repeat(3,minmax(70px,1fr));
+
+    }
+
+    .grid-esp{
+
+        grid-template-columns:
+        repeat(3,minmax(70px,1fr));
+
+    }
+
+    .grid-pers{
+
+        grid-template-columns:
+        repeat(3,minmax(70px,1fr));
+
+    }
+
+}
+.btn-limpiar{
+
+    background:#e6ecf0;
+
+    color:rgb(255, 31, 31);
+
+}
+
+.btn-limpiar:hover{
+
+    background:#feffff;
+
+}
+.btn-eliminar{
+
+    background:#ffffff;
+
+    color:rgb(253, 86, 56);
+
+}
+
+.btn-eliminar:hover{
+
+    background:#ffffff;
+
+}
+.encabezado{
+
+    text-align:center;
+
+    margin-bottom:15px;
+
+}
+
+.encabezado h1{
+
+    margin:0;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    color:#003366;
+
+}
+
+.encabezado p{
+
+    margin-top:2px;
+
+    font-size:11px;
+
+    color:#94a3b8;
+
+    letter-spacing:1px;
+
+}

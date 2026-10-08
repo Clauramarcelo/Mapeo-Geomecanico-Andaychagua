@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapeo Geomecánico</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href>
+</head>
+
+<script>
+
+if("serviceWorker" in navigator){
+
+    navigator.serviceWorker.register(
+        "service-worker.js"
+    );
+
+}
+
+</script>
+<body>
+
+    <div class="container">
+
+        <h1>📋 Mapeo Geomecánico</h1>
+        <div class="tabs">
+
+    <button onclick="mostrarTab('general', this)">General</button>
+
+    <button onclick="mostrarTab('geologia',this)">Geología</button>
+
+    <button onclick="mostrarTab('condiciones',this)">Condiciones</button>
+
+    <button onclick="mostrarTab('filitas', this)">Filitas</button>
+
+    <button onclick="mostrarTab('fracturamiento', this)">Fract.</button>
+
+    <button onclick="mostrarTab('familias', this)">Familias</button>
+
+    <button onclick="mostrarTab('final', this )">Final</button>
+
+</div>
+
+<div id="general" class="tab-content">
+        <section>
+            <h2>Información General</h2>
+
+            <input id="u_minera" type="text" value="ANDAYCHAGUA" readonly>
+            <input id="fecha" type="date">
+            <input id="n_celda" type="text" placeholder="N° Celda">
+            <input id="labor" type="text" placeholder="Labor">
+            <input id="nivel" type="text" placeholder="Nivel">
+            <select id="cuerpo_veta">
+
+    <option value="">Cuerpo / Veta</option>
+
+    <option>Cuerpo Adriana</option>
+
+    <option>Cuerpo Andaychagua</option>
+
+    <option>Cuerpo Prosperidad 1</option>
+
+    <option>Cuerpo Prosperidad Techo</option>
+
+    <option>Cuerpo Salvadora</option>
+
+    <option>Cuerpo Salvadora Norte</option>
+
+    <option>Veta Adriana</option>
+
+    <option>Veta Andaychagua</option>
+
+    <option>Veta Andaychagua 1</option>
+
+    <option>Veta Barbara</option>
+
+    <option>Veta Camila</option>
+
+    <option>Veta Dolores</option>
+
+    <option>Veta Nilda</option>
+
+    <option>Veta Prosperidad Este</option>
+
+    <option>Veta Ramal Barbara</option>
+
+    <option>Veta Valentina</option>
+
+</select>
+            <select id="geomecanico">
+
+    <option value="">Geomecánico</option>
+
+    <option>V. Hualpa</option>
+    <option>J. Espinoza</option>
+    <option>A. Gone</option>
+    <option>B. Lauriano</option>
+    <option>F. Paredes</option>
+    <option>J. Oscco</option>
+    <option>M. Alva</option>
+    <option>M. Alvarado</option>
+    <option>N. Llactahuaman</option>
+    <option>P. Barrientos</option>
+    <option>W. Navarro</option>
+
+    </select>
+            <select id="empresa">
+
+            <option value="">Empresa</option>
+
+            <option>IESA</option>
+
+            <option>VOLCAN</option>
+
+            </select>
+            <select id="turno"><option value="">Turno</option><option>DIA</option><option>NOCHE</option></select>
+            <input id="referencia" type="text" placeholder="Referencia">
+        </section>
+</div>
+
+<div id="geologia" class="tab-content">
+        <section>
+            <h2>Geología</h2>
+
+            <select id="litologia">
+                <option value="">Litología</option>
+                <option>Filita Bituminosa</option>
+                <option>Filita Verdosa</option>
+                <option>Filita Gris</option>
+                <option>Filita Silicificada</option>
+                <option>Cuarcita</option>
+                <option>Metavolcanico</option>
+                <option>Volcanico</option>
+                <option>Dique Dacitico</option>
+                <option>Dique Andecitico</option>
+                <option>Cuerpo Masivo</option>
+                <option>Veta</option>
+                <option>Marmol</option>
+                <option>Caliza</option>
+            </select>
+
+            <input id="azimut_labor" type="number" placeholder="Azimut de Labor">
+
+            <select id="tipo_alteracion">
+                <option value="">Tipo Alteración</option>
+                <option>Argilizacion</option>
+                <option>Carbonatacion</option>
+                <option>Silicificacion</option>
+                <option>Cloritizacion</option>
+                <option>Oxidacion</option>
+                <option>Seritizacion</option>
+                <option>Sin Alteracion</option>
+                <option>Mineralizacion</option>
+            </select>
+
+            <input id="longitud_mapeo" type="number" placeholder="Longitud de mapeo (m)">
+        </section>
+
+        <section>
+            <h2>Ubicación</h2>
+
+            <select id="ubicacion_mapeo">
+                <option value="">Ubicación de Mapeo</option>
+                <option>Caja Piso</option>
+                <option>Caja Techo</option>
+                <option>Estructura</option>
+                <option>Hastial</option>
+                <option>Avance de Disparo</option>
+                <option>Bajo Sost. Sacrificio</option>
+            </select>
+
+            <input id="este" type="number" placeholder="Este (m)">
+            <input id="norte" type="number" placeholder="Norte (m)">
+            <input id="cota" type="number" placeholder="Cota (m)">
+            <input id="ancho" type="number" placeholder="Ancho (m)">
+            <input id="alto" type="number" placeholder="Alto (m)">
+        </section>
+</div>
+
+<div id="condiciones" class="tab-content">
+        <section>
+            <h2>Condiciones</h2>
+
+            <select id="dureza_estimada">
+
+                <option value="">Dureza Estimada</option>
+
+                <option>R0</option>
+                <option>R1</option>
+                <option>R2</option>
+                <option>R3</option>
+                <option>R4</option>
+                <option>R5</option>
+                <option>R6</option>
+
+            </select>
+
+            <select id="jn"><option value="">Diaclasamiento (Jn)</option>
+            <option>Masivo sin juntas abiertas</option>
+            <option>Masivo con juntas aleatorias</option>
+            <option>Una familia</option>
+            <option>Una familia y aleatorias</option>
+            <option>Dos familias</option>
+            <option>Dos familias y aleatorias</option>
+            <option>Tres familias</option>
+            <option>Tres familias y aleatorias</option>
+            <option>Cuatro o más familias</option>
+            <option>Roca triturada</option>
+            </select>
+
+            <select id="alteracion_matriz">
+                <option value="">Alteración Matriz Rocosa</option>
+                <option>Fresco e inalterado</option>
+                <option>Ligeramente Alterado</option>
+                <option>Moderadamente Alterada</option>
+                <option>Altamente Alterado</option>
+                <option>Completamente Alterado</option>
+                <option>Roca Descompuesta</option>
+            </select>
+
+            <select id="agua">
+                <option value="">Agua</option>
+                <option>Seco</option>
+                <option>Humedo</option>
+                <option>Mojado</option>
+                <option>Goteando</option>
+                <option>Fluyendo</option>
+                <option>Agua a Presion</option>
+            </select>
+
+            <select id="ph">
+                <option value="">pH</option>
+                <option>Acido</option>
+                <option>Neutro</option>
+                <option>Basico</option>
+            </select>
+
+        <select id="temperatura">
+
+            <option value="">Temperatura (°C)</option>
+
+            <option>&lt; 20</option>
+            <option>[20 - 25]</option>
+            <option>[25 - 30]</option>
+            <option>&gt; 30</option>
+
+        </select>
+
+        </section>
+</div>
+
+<div id="filitas" class="tab-content">
+        <section>
+            <h2>Orientación de foliacion-filitas</h2>
+
+            <input id="dip_filitas" type="number" placeholder="Dip Filitas">
+            <input id="dipdir_filitas" type="number" placeholder="DipDir Filitas">
+            <select id="esp_filitas">
+
+            <option value="">Esp. foliación (cm)</option>
+
+            <option>&lt;0.01</option>
+            <option>0.1</option>
+            <option>0.01</option>
+            <option>0</option>
+            <option>0.7</option>
+            <option>2.01</option>
+            <option>Transversal>75°</option>
+
+        </select>
+            <select id="dureza_filitas">
+
+            <option value="">Dureza Filitas</option>
+
+            <option>R1</option>
+            <option>R2</option>
+            <option>R3</option>
+            <option>R4</option>
+
+        </select>
+            <h2>Indice de resistencia geologica-GSI</h2>
+            <input id="gsi_min" type="number" placeholder="GSI Mínimo">
+            <input id="gsi_max" type="number" placeholder="GSI Máximo">
+        </section>
+</div>
+
+<div id="fracturamiento" class="tab-content">
+        <section>
+            <h2>Grado de Fracturamiento</h2>
+
+            <div class="grid-celdas">
+
+    <input id="g1" placeholder="G1">
+    <input id="g2" placeholder="G2">
+    <input id="g3" placeholder="G3">
+
+    <input id="g4" placeholder="G4">
+    <input id="g5" placeholder="G5">
+    <input id="g6" placeholder="G6">
+
+    <input id="g7" placeholder="G7">
+    <input id="g8" placeholder="G8">
+    <input id="g9" placeholder="G9">
+
+    <input id="g10" placeholder="G10">
+    <input id="g11" placeholder="G11">
+    <input id="g12" placeholder="G12">
+
+    <input id="g13" placeholder="G13">
+    <input id="g14" placeholder="G14">
+    <input id="g15" placeholder="G15">
+
+</div>
+        </section>
+</div>
+
+<div id="familias" class="tab-content">
+        <section>
+            <h2>Familias</h2>
+
+            <div id="contenedorFamilias"></div>
+
+            <button type="button" onclick="agregarFamilia()">
+                ➕ Agregar Familia
+            </button>
+        </section>
+</div>
+
+<div id="final" class="tab-content">
+        <section>
+            <h2>Final</h2>
+
+            <input id="zona" type="text" placeholder="Zona">
+
+            <input id="condicion_mapeo"
+                   type="text"
+                   placeholder="Condición de Mapeo">
+
+            <textarea id="observaciones"
+                      placeholder="Observaciones"></textarea>
+        </section>
+</div>
+        <button class="btn-limpiar"type="button"
+        onclick="limpiarFormulario()">🗑️ Limpiar Formulario
+        </button>
+        <button class="btn-eliminar"
+        type="button"
+        onclick="eliminarUltimoRegistro()">
+
+    ❌ Eliminar Último Registro
+
+</button>
+        <button type="button" onclick="agregarRegistro()">
+            💾 Agregar Mapeo
+        </button>
+
+        <button type="button" onclick="exportarExcel()">
+            📊 Exportar Excel
+        </button>
+
+        <div id="contador">
+            0 registros
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
