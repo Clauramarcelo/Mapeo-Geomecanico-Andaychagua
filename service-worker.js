@@ -1,4 +1,4 @@
-const CACHE = "mapeo-v1";
+const CACHE = "mapeo-v2";
 
 self.addEventListener("install", e => {
 
